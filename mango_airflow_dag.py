@@ -90,7 +90,7 @@ def write_to_bigquery(**context):
 
     # credentials = service_account.Credentials.from_service_account_file('/home/anton/Dropbox/gsc/leontyev-anton.json')
     # try здесь смысла вроде как не имеет, поэтому пишу напрямую
-    pandas_gbq.to_gbq(df, 'mango.' + table_name, project_id='leontyev-anton', if_exists='replace')  # если прописывать credentials, то запускать с reauth=True
+    pandas_gbq.to_gbq(df, 'mango.' + table_name, project_id='...', if_exists='replace')  # если прописывать credentials, то запускать с reauth=True
     print(f'Table in BigQuery mango.{table_name} created success. Number of rows: {len(df)}\n')
 
 with DAG(dag_id='mango_dag', default_args=args, schedule_interval='0 0 * * *') as dag:  # почему-то schedule_interval сверху в args не работает
