@@ -29,7 +29,7 @@ args = {
     'depends_on_past': False,  # если предыдущие запуски (по расписанию походу) сломались, то будет дальше запускаться
     'email_on_failure': True,
     'email_on_retry': False,
-    'email': 'anton108bk@gmail.com',
+    'email': '...',
 }
 
 def response1():
