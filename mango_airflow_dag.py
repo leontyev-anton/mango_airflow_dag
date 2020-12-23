@@ -10,7 +10,7 @@ import pandas
 import pandas_gbq
 from google.oauth2 import service_account
 
-vpbx_api_key = '...'   # дано - уникалььный код вашей АТС
+vpbx_api_key = '...'   # дано - уникальный код вашей АТС
 vpbx_api_salt = '...'  # дано - ключ для создания подписи
 fields = 'records,start,finish,answer,from_extension,from_number,to_extension,to_number,disconnect_reason,entry_id,line_number,location'
 period = 'date'
