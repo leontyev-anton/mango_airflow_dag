@@ -1,17 +1,16 @@
-# credentials нужно вынести в отдельный файл - не доделано
-from datetime import datetime, timedelta
-from airflow import DAG
-from airflow.operators.python_operator import PythonOperator
-from airflow.operators.bash_operator import BashOperator
-import requests
 import hashlib
 import io
+from datetime import datetime, timedelta
+
 import pandas
 import pandas_gbq
-from google.oauth2 import service_account
+import requests
+from airflow import DAG
+from airflow.operators.bash_operator import BashOperator
+from airflow.operators.python_operator import PythonOperator
 
-vpbx_api_key = '...'   # дано - уникальный код вашей АТС
-vpbx_api_salt = '...'  # дано - ключ для создания подписи
+from mango_dag_config import vpbx_api_key, vpbx_api_salt  # уникалььный код вашей АТС и ключ для создания подписи
+
 fields = 'records,start,finish,answer,from_extension,from_number,to_extension,to_number,disconnect_reason,entry_id,line_number,location'
 period = 'date'
 #begin = datetime(2020, 6, 15, hour=0, minute=0, second=0)
